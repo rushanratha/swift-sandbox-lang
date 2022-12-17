@@ -18,6 +18,11 @@ struct User {
     let contactInfo: ContactInfo
     let dateOfBirth: DateOfBirth
     let active: Bool
+    
+    func pretty() -> String {
+        let pretty: String = "{\n\t\"id\" : \"\(self.id)\",\n\t\"firstName\" : \"\(self.firstName)\"\n}"
+        return pretty
+    }
 }
 
 let contactInfo = ContactInfo(mobile: "00000000000", primary_email: "bob@dev.com", secondary_email: "bob@example.com")
@@ -27,3 +32,5 @@ let user = User(id: "bob@dev.com", firstName: "Bob", lastName: "McBobFace", cont
 print(user)
 print(user.id)
 print("\(user.dateOfBirth.day)/\(user.dateOfBirth.month)/\(user.dateOfBirth.year)")
+
+print(user.pretty())
